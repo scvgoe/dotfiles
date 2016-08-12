@@ -14,6 +14,8 @@ set autoindent
 set number
 set hlsearch
 set incsearch
+set ruler
+set splitright              " when split window, new window will be created at right side.
 syntax on
 let g:syntastic_python_checker = 'pylint'
 
@@ -24,8 +26,20 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" tagbar key mapping
 nmap <C-\> :TagbarToggle<CR>
+
+" vim-airline themes setting
+set laststatus=2
+set t_Co=256
+let g:airline_theme='murmur'
+
+" ambiguous command
+command E Ex     " syntastic Error : vim Explore
