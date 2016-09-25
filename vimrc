@@ -17,7 +17,6 @@ set incsearch
 set ruler
 set splitright              " when split window, new window will be created at right side.
 syntax on
-let g:syntastic_python_checker = 'pylint'
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
