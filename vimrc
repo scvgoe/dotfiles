@@ -64,10 +64,16 @@ Plugin 'mattn/emmet-vim'
 " javascript
 "" Javascript Bundle
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 " python
 "" Python Bundle
 Plugin 'davidhalter/jedi-vim'
+
+" csv
+"" CSV Bundle
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -146,11 +152,14 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+  autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
 
 " python
@@ -158,7 +167,7 @@ augroup END
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
+      \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
