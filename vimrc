@@ -4,9 +4,8 @@ filetype off                  " required
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,cp949,euc-kr,iso-8859-1
 set bomb
-set binary
 set ttyfast
 
 "" Tabs.
@@ -132,12 +131,6 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
-
-"" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
