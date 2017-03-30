@@ -29,6 +29,10 @@ set updatetime=250
 set textwidth=79
 set number
 set splitright              " when split window, new window will be created at right side.
+set splitbelow              " when split window, new window will be created at below side.
+
+"" Clipboard Sync with system
+set clipboard=unnamed
 
 "" Map leader to ,
 let mapleader=','
