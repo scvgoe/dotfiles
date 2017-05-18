@@ -5,7 +5,6 @@ filetype off                  " required
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,cp949,euc-kr,iso-8859-1
-set bomb
 set ttyfast
 
 "" Tabs.
@@ -42,6 +41,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
