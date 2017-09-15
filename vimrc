@@ -59,7 +59,6 @@ Plugin 'ludwig/split-manpage.vim'
 
 " html
 "" HTML Bundle
-
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'tpope/vim-haml'
@@ -70,6 +69,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
+
+" typescript
+"" Typescript Bundle
+Plugin 'leafgarland/typescript-vim'
 
 " python
 "" Python Bundle
@@ -158,6 +161,14 @@ let g:javascript_plugin_flow = 1
 augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+augroup END
+
+" typescript-vim
+augroup vimrc-typescript
+    " use `set filetype` to override default filetype=xml for *.ts files
+    autocmd BufNewFile,BufRead *.ts  set filetype=typescript
+    " use `setfiletype` to not override any other plugins like ianks/vim-tsx
+    autocmd BufNewFile,BufRead *.tsx setfiletype typescript
 augroup END
 
 " python
