@@ -19,7 +19,6 @@ set hlsearch
 set incsearch
 
 "" Visual Settings
-syntax on
 set ruler
 set mouse=c
 set modifiable
@@ -70,9 +69,14 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 
+" ejs
+"" Ejs Bundle
+Plugin 'nikvdp/ejs-syntax'
+
 " typescript
 "" Typescript Bundle
 Plugin 'leafgarland/typescript-vim'
+Plugin 'quramy/tsuquyomi'
 
 " python
 "" Python Bundle
@@ -84,6 +88,7 @@ Plugin 'chrisbra/csv.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 " tagbar key mapping
 nmap <C-\> :TagbarToggle<CR>
@@ -138,6 +143,9 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:syntastic_typescript_tslint_args = "--config ~/Develop/ad.zigbang.com/tslint.json"
+let g:syntastic_quiet_messages = {"level":  "warning"}
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -163,13 +171,14 @@ augroup vimrc-javascript
   autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
 
-" typescript-vim
+" vim-typescript
 augroup vimrc-typescript
-    " use `set filetype` to override default filetype=xml for *.ts files
-    autocmd BufNewFile,BufRead *.ts  set filetype=typescript
-    " use `setfiletype` to not override any other plugins like ianks/vim-tsx
-    autocmd BufNewFile,BufRead *.tsx setfiletype typescript
+  autocmd!
+  autocmd FileType typescript set tabstop=2|set shiftwidth=2|set noexpandtab softtabstop=2 smartindent
 augroup END
+
+" typescript
+let g:tsuquyomi_disable_quickfix = 1
 
 " python
 " vim-python
@@ -206,3 +215,10 @@ let g:indentLine_faster = 1
 noremap <leader>q :bp<CR>
 noremap <leader>w :bn<CR>
 noremap <leader>c :bd<CR>
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
