@@ -29,6 +29,10 @@ set number
 set splitright              " when split window, new window will be created at right side.
 set splitbelow              " when split window, new window will be created at below side.
 
+"" Insert new line without entering insert mode
+nmap oo o<Esc>k
+nmap OO O<Esc>j
+
 "" Clipboard Sync with system
 set clipboard=unnamed
 
@@ -144,12 +148,15 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
 let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi'] " You shouldn't use 'tsc' checker.
-let g:syntastic_typescript_tslint_args = "--config ~/Develop/ad.zigbang.com/tslint.json"
+""" let g:syntastic_typescript_tslint_args = "--config ~/path/to/tslint.json"
 let g:syntastic_quiet_messages = {"level":  "warning"}
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
+
+" markdown
+autocmd FileType markdown setlocal textwidth=0
 
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
@@ -158,6 +165,10 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
+
+" html
+" for html files, 2 spaces
+autocmd Filetype json setlocal ts=2 sw=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -215,6 +226,8 @@ let g:indentLine_faster = 1
 noremap <leader>q :bp<CR>
 noremap <leader>w :bn<CR>
 noremap <leader>c :bd<CR>
+
+autocmd BufNewFile,BufRead *.es7 set filetype=javascript
 
 let g:tmux_navigator_no_mappings = 1
 
