@@ -1,4 +1,4 @@
-cp vimrc ~/.vimrc
-cp zshrc ~/.zshrc
-cp screenrc ~/.screenrc
-cp tmux.conf ~/.tmux.conf
+ln -vf .vimrc ~
+ln -vf .zshrc ~
+ln -vf .screenrc ~
+ln -vf .tmux.conf ~
