@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set nobackup
+
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -13,6 +15,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+autocmd BufWritePre * %s/\s\+$//e " auto remove trailing white space
 
 "" Searching
 set hlsearch
@@ -28,10 +31,6 @@ set textwidth=79
 set number
 set splitright              " when split window, new window will be created at right side.
 set splitbelow              " when split window, new window will be created at below side.
-
-"" Insert new line without entering insert mode
-nmap oo o<Esc>k
-nmap OO O<Esc>j
 
 "" Clipboard Sync with system
 set clipboard=unnamed
@@ -179,7 +178,7 @@ let g:javascript_plugin_flow = 1
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
 augroup END
 
 " vim-typescript

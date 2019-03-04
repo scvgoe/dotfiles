@@ -58,12 +58,8 @@ plugins=(git docker docker-compose)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/usr/local/share/git-core/contrib/diff-highlight/:${PATH}"
 
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,9 +81,14 @@ export LANG=en_US.UTF-8
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="/Users/daesungkim/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/share/git-core/contrib/diff-highlight/:${PATH}"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
