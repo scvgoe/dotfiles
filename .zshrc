@@ -92,3 +92,6 @@ export PATH="/usr/local/share/git-core/contrib/diff-highlight/:${PATH}"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export ANDROID_HOME=/Users/daeseongkim/Library/Android/sdk
+export ANDROID_SDK_ROOT=/Users/daeseongkim/Library/Android/sdk
