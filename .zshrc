@@ -95,3 +95,8 @@ export LANG=en_US.UTF-8
 
 export ANDROID_HOME=/Users/daeseongkim/Library/Android/sdk
 export ANDROID_SDK_ROOT=/Users/daeseongkim/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/

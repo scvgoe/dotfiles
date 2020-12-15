@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set nobackup
+set noswapfile
 
 "" Encoding
 set encoding=utf-8
