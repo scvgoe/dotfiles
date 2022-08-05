@@ -100,3 +100,17 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+export PATH="/Library/Frameworks/GStreamer.framework/Commands/:$PATH"
+
+export ANDROID_NDK_ROOT="$HOME/Library/Android/sdk/ndk/22.1.7171670"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="$ANDROID_SDK_ROOT/cmake/3.10.2.4988404/bin:$PATH"
+alias grep='ggrep'
