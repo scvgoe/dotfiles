@@ -8,7 +8,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME=pygmalion
 alias zshconfig="subl ~/.zshrc"
 alias envconfig="subl ~/Projects/config/env.sh"
-plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
+plugins=(git colored-man colorize github vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -95,6 +96,8 @@ export LANG=en_US.UTF-8
 
 export ANDROID_HOME=/Users/daeseongkim/Library/Android/sdk
 export ANDROID_SDK_ROOT=/Users/daeseongkim/Library/Android/sdk
+export ANDROID_HOME=/Users/daeseong/Library/Android/sdk
+export ANDROID_SDK_ROOT=/Users/daeseong/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -103,6 +106,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export BREW_ROOT="/opt/homebrew"
+eval "$($BREW_ROOT/bin/brew shellenv)"
+export PATH="$PATH:$BREW_ROOT/bin"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -113,6 +120,8 @@ export PATH="/Library/Frameworks/GStreamer.framework/Commands/:$PATH"
 export ANDROID_NDK_ROOT="$HOME/Library/Android/sdk/ndk/22.1.7171670"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/cmake/3.10.2.4988404/bin:$PATH"
+
 alias grep='ggrep'
+alias python="python3"
 
 git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
