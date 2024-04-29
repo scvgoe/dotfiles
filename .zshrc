@@ -8,7 +8,6 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME=pygmalion
 alias zshconfig="subl ~/.zshrc"
 alias envconfig="subl ~/Projects/config/env.sh"
-plugins=(git colored-man colorize github vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,7 +51,7 @@ plugins=(git colored-man colorize github vagrant virtualenv pip python brew osx 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose)
+plugins=(git git-prompt colorize github vagrant virtualenv pip python brew docker docker-compose)
 
 # User configuration
 
@@ -94,15 +93,13 @@ export PATH="/usr/local/share/git-core/contrib/diff-highlight/:${PATH}"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export ANDROID_HOME=/Users/daeseongkim/Library/Android/sdk
-export ANDROID_SDK_ROOT=/Users/daeseongkim/Library/Android/sdk
-export ANDROID_HOME=/Users/daeseong/Library/Android/sdk
-export ANDROID_SDK_ROOT=/Users/daeseong/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
+export JAVA_HOME=/Library/java/JavaVirtualMachines/jdk-17.jdk/Contents/home
+export PATH=$PATH:$JAVA_HOME/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -121,7 +118,7 @@ export ANDROID_NDK_ROOT="$HOME/Library/Android/sdk/ndk/22.1.7171670"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/cmake/3.10.2.4988404/bin:$PATH"
 
-alias grep='ggrep'
 alias python="python3"
 
 git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

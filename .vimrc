@@ -28,7 +28,6 @@ set mouse=c
 set modifiable
 set timeoutlen=1000
 set updatetime=250
-set textwidth=79
 set number
 set splitright              " when split window, new window will be created at right side.
 set splitbelow              " when split window, new window will be created at below side.
@@ -38,6 +37,9 @@ set clipboard=unnamed
 
 "" Map leader to ,
 let mapleader=','
+
+" Default highlight is better than polyglot
+let g:polyglot_disabled = ['python']
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -212,8 +214,6 @@ let g:jedi#completions_command = "<C-Enter>"
 let g:jedi#smart_auto_mappings = 1
 
 " Syntax highlight
-" Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 " IndentLine
