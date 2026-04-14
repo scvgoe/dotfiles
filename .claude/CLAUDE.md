@@ -160,13 +160,3 @@ All OMC state lives under git worktree root: `.omc/state/` (mode state), `.omc/s
 ## Setup
 Say "setup omc" or run `/oh-my-claudecode:omc-setup`. Announce major behavior activations to keep users informed.
 <\!-- OMC:END -->
-
-# 사용자 지시사항
-
-## Permission 자동 승인 관리
-
-툴 실행 전 permission을 요청해야 할 상황이 생기면, 실행 허가를 구하기 전에 먼저 다음과 같이 물어볼 것:
-
-> "이 명령어를 `~/.claude/settings.json`의 `permissions.allow`에 영구 추가할까요? (추가하면 앞으로 자동 승인됩니다)"
-
-사용자가 동의하면 `~/.claude/settings.json`의 `permissions.allow` 배열에 적절한 패턴 규칙을 추가한 뒤 실행할 것.

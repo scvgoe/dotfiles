@@ -1,22 +1,11 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(cd:*)",
-      "Bash(ls:*)",
-      "Bash(find:*)",
-      "Bash(sed:*)",
-      "Bash(grep:*)",
-      "Bash(git add:*)",
-      "Bash(git show:*)",
-      "Bash(git diff:*)",
-      "Bash(yarn tsc:check:*)",
-      "Bash(yarn lint:check:*)",
-      "Bash(yarn all:check:*)",
-      "Bash(yarn codegen:*)"
-    ],
-    "deny": []
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
   },
-  "model": "opusplan",
+  "permissions": {
+    "deny": [],
+    "defaultMode": "bypassPermissions"
+  },
   "statusLine": {
     "type": "command",
     "command": "node ~/.claude/hud/omc-hud.mjs"
@@ -38,7 +27,10 @@
     "figma@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "greptile@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "sumup@claude-plugins-official": true,
+    "octo@nyldn-plugins": true,
+    "claude-mem@thedotmack": true
   },
   "extraKnownMarketplaces": {
     "omc": {
@@ -46,10 +38,42 @@
         "source": "git",
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
       }
+    },
+    "nyldn-plugins": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/nyldn/claude-octopus.git"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
     }
   },
   "alwaysThinkingEnabled": false,
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  "skipDangerousModePermissionPrompt": true,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh 'Claude Code' 'Task completed'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh 'Claude Code' 'Waiting for input'"
+          }
+        ]
+      }
+    ]
   }
 }

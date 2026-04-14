@@ -61,11 +61,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,3 +118,5 @@ alias python="python3"
 
 git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+alias claude-mem='bun "/Users/davis/.claude/plugins/cache/thedotmack/claude-mem/10.6.3/scripts/worker-service.cjs"'
